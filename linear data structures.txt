@@ -1,0 +1,43 @@
+AGORITHM sum of distinct elements
+VAR
+    set1 ,set2 : ARRAY_OF integer[4];
+    i,j,s1,s2,sum:integer
+    x,y:integer
+BEGIN
+//reading the two sets
+ REPEAT
+     read(set1[x])
+ UNTIL (x<=length(set1))
+
+REPEAT
+    read(set2[y])
+UNTIL (y<=length(set2))
+
+
+
+ sum=0//initialiser final sum
+ s1=0//loop sum 1
+ s2=0//inverse loop sum 
+
+ //calculation of sum 1
+   
+   FOR i FROM 0 TO length(set1) STEP 1  DO
+       FOR j FROM 0 TO length(set2) STEP 1  DO
+           IF (set1[i] != set2[j])) THEN
+               s1+=set1[i]
+           END_IF
+       END_FOR
+   END_FOR
+//calculation of sum 2
+ FOR j FROM 0 TO length(set2) STEP 1  DO
+     FOR i FROM 0 TO length(set1) STEP 1  DO
+     IF (set2[j] != set1[i]) THEN
+         s2+=set2[j]
+     END_IF
+
+
+ END_FOR
+ //calculate and print final sum
+ sum=s1+s2
+ write("sum of distinct elements" s)
+ End
